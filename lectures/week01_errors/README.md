@@ -80,6 +80,3 @@
 - Demonstrate computational errors using a calculator or simple Python code.  
 - Encourage student interaction through short in-class tasks.
 
----
-
-## 📂 Repository Structure (Recommended)
