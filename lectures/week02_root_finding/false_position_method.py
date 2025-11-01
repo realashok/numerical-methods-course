@@ -1,5 +1,3 @@
-# False Position (Regula Falsi) Method
-
 def false_position(f, xl, xu, es=0.01, imax=10):
     """
         f   : function whose root is to be found
@@ -16,15 +14,15 @@ def false_position(f, xl, xu, es=0.01, imax=10):
     xr_old = xl
     ea = 100  
 
-    print(f"{'Iter':<5}{'xl':<10}{'xu':<10}{'xr':<10}{'f(xr)':<12}{'ea (%)':<10}")
-    print("-" * 55)
+    print(f"{'Iter':<5}{'xl':<10}{'xu':<10}{'xr':<10}{'f(xl)':<12}{'f(xu)':<12}{'f(xr)':<12}{'ea (%)':<10}")
+    print("=" * 80)
     while ea > es and iter < imax:
         xr = xu - (f(xu) * (xl - xu)) / (f(xl) - f(xu)) 
         iter += 1
         if xr != 0:
             ea = abs((xr - xr_old) / xr) * 100
 
-        print(f"{iter:<5}{xl:<10.4f}{xu:<10.4f}{xr:<10.4f}{f(xr):<12.4f}{ea:<10.4f}")
+        print(f"{iter:<5}{xl:<10.4f}{xu:<10.4f}{xr:<10.4f}{f(xl):<12.4f}{f(xu):<12.4f}{f(xr):<12.4f}{ea:<10.4f}")
         if f(xl) * f(xr) < 0:
             xu = xr
         elif f(xl) * f(xr) > 0:
